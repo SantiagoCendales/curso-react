@@ -5,6 +5,7 @@ import { TURNS } from './constants';
 import { Square } from './components/Square';
 import { checkWinner } from './logic/board';
 import { Winner } from './components/Winner';
+import { saveToStorage } from './logic/saveGame';
 
 
 function App() {
@@ -35,8 +36,10 @@ function App() {
     setTurn(nextTurn)
 
     // Guardar partida
-    localStorage.setItem('board', JSON.stringify(newBoard));
-    localStorage.setItem('turn', nextTurn);
+    saveToStorage({
+      board: newBoard,
+      turn: nextTurn
+    })
 
     // Revisión de si hay ganador
     const newWinner = checkWinner(newBoard)
