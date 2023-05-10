@@ -4,7 +4,7 @@ export const Header = ({ handleFilters }) => {
   return (
     <header>
       <h1>React Shop</h1>
-      <Filters />
+      <Filters changeFilters={handleFilters} />
     </header>
   )
 }
