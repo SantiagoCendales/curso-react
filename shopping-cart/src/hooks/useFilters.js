@@ -1,10 +1,10 @@
 import { useContext, useMemo, useState } from 'react'
 import productsData from '../mocks/products.json'
-import { FilterContext } from '../components/context/filtersContext'
+import { FilterContext } from '../context/filtersContext'
 
 export const useFilters = () => {
 
-  const [products, setProducts] = useState(productsData.products)
+  const [products] = useState(productsData.products)
 
   const {filters, setFilters} = useContext(FilterContext)
 
